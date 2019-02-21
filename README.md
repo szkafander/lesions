@@ -149,9 +149,6 @@ Some thoughts on the code:
 - Not all modules are of the same code quality. Please take the dataset module as a benchmark of my style and just imagine that the rest is on the same level. This only pertains to style, not to class design and user-friendliness. The class is still bloated, I am aware of that. Given time, I would have encapsulated the optional inputs, aux_class_order, etc. into their own classes.
 - I'll be honest, I knew of Python's type hinting, but I have not used it seriously before. I may not know the best practices yet.
 
-#### Git
-I have not committed into the git repo that you sent, only zipped it up and sent it. I can of course do it if you insist. Did not want to spend more time.
-
 # Mishaps
 A mistake I made was not giving a fixed random seed to utils.setup_generators so that the test/training/validation sets were mixed up after reloading a model. For this reason, I could not visualize the true predictions on unseen data. I could of course retrain all models, but I would not spend more time on that. The results I show here are therefore just for demonstration purposes. You'll see the code with which I made the visualizations.
 
