@@ -11,7 +11,7 @@ This is what I had in mind when I started:
 - I wanted to compare model performance of these three.
 - I wanted to try to add auxiliary data to the classifier head from the metadata (age and sex) as well.
 
-##Notes about the dataset:
+Notes about the dataset:
 - It was unbalanced.
 - I wrote a dirty Dataset class that had options to balance the dataset via either up- or downsampling.
 - I also wanted add an option to train with heterogeneous class weights.
@@ -143,7 +143,7 @@ I ran it in an IPython kernel in Spyder. I have not tested it from the command l
 #### How to get the models
 I will upload the trained models [here](https://drive.google.com/open?id=1TpF_sMsmM8bwEl5uWnxcBsZtPFKJO82X).
 
-####Some thoughts on the code:
+Some thoughts on the code:
 - It is not meant to be perfect, but is still more than a single-file script.
 - I followed Google's pyguide as much as I could.
 - Not all modules are of the same code quality. Please take the dataset module as a benchmark of my style and just imagine that the rest is on the same level. This only pertains to style, not to class design and user-friendliness. The class is still bloated, I am aware of that. Given time, I would have encapsulated the optional inputs, aux_class_order, etc. into their own classes.
@@ -152,10 +152,11 @@ I will upload the trained models [here](https://drive.google.com/open?id=1TpF_sM
 #### Git
 I have not committed into the git repo that you sent, only zipped it up and sent it. I can of course do it if you insist. Did not want to spend more time.
 
-#Mishaps
+# Mishaps
 A mistake I made was not giving a fixed random seed to utils.setup_generators so that the test/training/validation sets were mixed up after reloading a model. For this reason, I could not visualize the true predictions on unseen data. I could of course retrain all models, but I would not spend more time on that. The results I show here are therefore just for demonstration purposes. You'll see the code with which I made the visualizations.
 
 I evaluated test accuracies right after I trained the models and still had the data generators with the right indices. The trends were the same as seen in the confusion matrices plot, with a negative bias. I.e., an accuracy of around 80% shown in the figure was about 65% tested only on unseen images.
+
 # Time spent
 I spent three full evenings on the assignment. Models were training simultaneously while I coded.
 Frankly, most of the time was spent tracking down [this bug](http://blog.datumbox.com/the-batch-normalization-layer-of-keras-is-broken/).
